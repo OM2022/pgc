@@ -1,17 +1,22 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+
+import "assets/css/nucleo-svg.css";
+import "assets/css/nucleo-icons.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import "assets/scss/argon-design-system.scss?v1.0.0";
+
+import Index from "views/Index.js";
+
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+  <BrowserRouter>
+    <Switch>
+      <Route path="/index" exact render={(props) => <Index {...props} />} />
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+      <Redirect to="/index" />
+    </Switch>
+  </BrowserRouter>,
+  document.getElementById("root")
+);
