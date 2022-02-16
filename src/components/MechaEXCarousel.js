@@ -78,10 +78,6 @@ function MechaEXCarousel() {
         //for debugging the message
         //setStatusMessage({visible: true, message: newValue, variant: "danger"})
 
-        if (newValue < 1) {
-            setWarningMessage("Number must be above 0");
-            return;
-        }
         if (newValue > 10) {
             setWarningMessage("Number must be less then 11");
             return;
