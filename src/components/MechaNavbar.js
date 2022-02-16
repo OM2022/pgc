@@ -65,7 +65,7 @@ function MechaNavbar(props) {
               <Row>
                 <Col className="collapse-brand" xs="6">
                   <a href="#mechagnomes" onClick={(e) => e.preventDefault()}>
-                    Mechagnomes <span></span>
+                    Outback Martians <span></span>
                   </a>
                 </Col>
                 <Col className="collapse-close text-right" xs="6">
