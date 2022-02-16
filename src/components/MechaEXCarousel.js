@@ -57,7 +57,6 @@ function MechaEXCarousel() {
                     setContract(contract)
 
                     let response = await contract.currentMintCost();
-                    console.log(response);
                     setPrice(ethers.utils.formatEther(response))
                 }
 
