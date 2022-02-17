@@ -124,7 +124,6 @@ function MechaEXCarousel() {
                 {
                     from: address,
                     // to: contract.address,
-                    gasPrice: gasPrice,
                     value: ethers.utils.parseEther(buyPrice.toString()).toString()
                 }
             ).then((tx) => {
