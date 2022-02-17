@@ -91,6 +91,12 @@ function MechaEXCarousel() {
     }
 
     const mint = async () => {
+        setStatusMessage({ message: "Test" , visible : true, variant : "warning"})
+        if(!connected) {
+            setStatusMessage({ message: "You must connect your wallet to mint." , visible : true, variant : "warning"})
+            return;
+        }
+
         if (!mintingCount || +mintingCount === 0) {
             setStatusMessage({message: "You must specify an amount", visible: true, variant: "info"})
             return
@@ -104,7 +110,6 @@ function MechaEXCarousel() {
             })
             return
         } else {
-
             setStatusMessage({visible: false, message: "", variant: "info"})
         }
 
@@ -117,6 +122,15 @@ function MechaEXCarousel() {
 
             if (balance < buyPrice) {
                 setStatusMessage({message: `Insufficient funds.`, visible: true, variant: "danger"})
+                return
+            }
+
+            if (+mintingCount > mintingCount) {
+                setStatusMessage({
+                    message: `Amount exceeds remaining mintable Portal Gun's. Please specify a number less than ${mintingCount}.`,
+                    visible: true,
+                    variant: "warning"
+                })
                 return
             }
 
@@ -151,6 +165,7 @@ function MechaEXCarousel() {
             });
         } catch (e) {
             console.log(e);
+            setStatusMessage({message: e, visible: true, variant: "danger"})
         }
 
     }
@@ -233,7 +248,7 @@ function MechaEXCarousel() {
                                         className="btn-white mt-4"
                                         color="default"
                                     >
-                                        COMING SOON ⚙️
+                                        COMING SOON
                                     </Button>
 
                                     :
