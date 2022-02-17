@@ -289,3 +289,41 @@ background-color: black;
     z-index: 500000;
 
 }
+
+.connectWallet{
+
+
+    display: inline-block;
+    /* width: 40px;
+     height: 40px;*/
+    text-align: center;
+    border-radius: 6px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    transition: background-color .3s, opacity .5s, visibility .5s;
+    visibility: visible;
+    z-index: 1000;
+
+
+
+
+
+
+
+
+
+
+
+    font-family: omBotak;
+    background-color: rgb(21, 21, 21);
+    text-align: center;
+    font-size: 1em;
+    font-weight: bolder;
+    margin: auto;
+    color: white;
+    -webkit-text-stroke-width: 0.06em;
+    -webkit-text-stroke-color: black;
+    border: 7px solid #000000;
+    border-radius: 10px 10px 10px 10px;
+}

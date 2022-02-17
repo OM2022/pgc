@@ -51,18 +51,12 @@ const Wallet = () => {
                 connected ?
                     <ConnectedWallet disconnect={disconnect}/>
                     :
-                    <NavLink
-                        className="nav-link-icon text-warning"
-                        color="yellow" type="button" onClick={toggle}
-                        href="#"
-                    >
-                        <div className="walletButton">
-                            <i className="fas fa-wallet"
-                               style={{marginLeft: "10px", marginRight: "10px", color: "#F8D210"}}></i>
-                            Connect your Wallet
-                        </div>
-
-                    </NavLink>
+                    <Button className="btn-icon rounded connectWallet" onClick={toggle} type="button" >
+                        <span className="btn-inner--icon">
+                          <i className="fas fa-wallet"></i>
+                        </span>
+                        <span className="btn-inner--text">Connect Wallet</span>
+                    </Button>
             }
 
             <WalletConnectModal loading={loading} setLoading={setLoading} open={open} toggle={toggle}

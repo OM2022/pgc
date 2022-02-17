@@ -8,6 +8,7 @@ import {ethers} from "ethers";
 import mechagnomes from "../contracts/MechagnomesNFT.json";
 
 import gear30x30 from "../assets/img/gear30x30.png";
+import Wallet from "./Wallet/Wallet";
 
 // Core Components
 const items = [
@@ -165,7 +166,7 @@ function MechaEXCarousel() {
             });
         } catch (e) {
             console.log(e);
-            setStatusMessage({message: e, visible: true, variant: "danger"})
+            setStatusMessage({message: e.message, visible: true, variant: "danger"})
         }
 
     }
@@ -259,38 +260,42 @@ function MechaEXCarousel() {
                                             </Alert>
 
                                         }
-                                        <Button
-                                            className="btn-white mt-4"
-                                            color="default"
-                                            style={{minWidth: "20em", padding: "0"}}
-                                        >
-                                            Claim
-                                            <Input
-                                                className=" "
-                                                id="count"
-                                                type="number"
-                                                value={mintingCount}
-                                                onChange={handleChange}
-                                                style={{
-                                                    maxWidth: "5em",
-                                                    display: "revert",
-                                                    marginLeft: "1em",
-                                                    marginRight: "1em"
-                                                }}
+                                        {
+                                            !connected ?
+                                                <Wallet></Wallet>
+                                                :
+                                                <Button
+                                                    className="btn-white mt-4"
+                                                    color="default"
+                                                    style={{minWidth: "20em", padding: "0"}}
+                                                >
+                                                    Claim
+                                                    <Input
+                                                        className=" "
+                                                        id="count"
+                                                        type="number"
+                                                        value={mintingCount}
+                                                        onChange={handleChange}
+                                                        style={{
+                                                            maxWidth: "5em",
+                                                            display: "revert",
+                                                            marginLeft: "1em",
+                                                            marginRight: "1em"
+                                                        }}
 
-                                            ></Input>
-                                            {portalGunLabel}
-                                        </Button>
-
-                                        <Button
+                                                    ></Input>
+                                                    {portalGunLabel}
+                                                </Button>
+                                        }
+                                            <Button
                                             className="btn-white mt-4"
                                             color="default"
                                             style={{padding: "0 5px 0 5px"}}
                                             onClick={mint}
-                                        >
+                                            >
                                             Claim ➥
-                                        </Button>
-                                    </>
+                                            </Button>
+                                            </>
 
                             }
 

@@ -106,7 +106,6 @@ function MechaNavbar(props) {
                   <i className="fab fa-twitter"></i>
                 </NavLink>
               </NavItem>
-               <Wallet></Wallet>
             </Nav>
           </UncontrolledCollapse>
         </Container>
